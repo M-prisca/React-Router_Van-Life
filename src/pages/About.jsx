@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 function About() {
   return (
     <div>
-      <img src={bgImg} className="w-full h-60 object-cover shadow-lg" />
-      <div>
+      <img src={bgImg} className="w-full h-90 object-cover shadow-lg" />
+      <div className="bg-white px-12">
         <h1 className="text-4xl font-bold p-9">
           Don’t squeeze in a sedan when you could relax in a van.
         </h1>
@@ -20,7 +20,7 @@ function About() {
           of touring the world on 4 wheels.
         </p>
       </div>
-      <div className="bg-orange-300 p-12 m-10 rounded-lg">
+      <div className="bg-orange-300 p-12 m-20 mt-12 rounded-lg">
         <h2 className="text-3xl font-bold mb-12">
           Your destination is waiting.
           <br />
