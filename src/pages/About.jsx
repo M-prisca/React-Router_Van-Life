@@ -4,27 +4,29 @@ import { Link } from "react-router-dom";
 
 function About() {
   return (
-    <div className="about-page-container">
-      <img src={bgImg} className="about-hero-image" />
-      <div className="about-page-content">
-        <h1>Don’t squeeze in a sedan when you could relax in a van.</h1>
-        <p>
+    <div>
+      <img src={bgImg} className="w-full h-60 object-cover shadow-lg" />
+      <div>
+        <h1 className="text-4xl font-bold p-9">
+          Don’t squeeze in a sedan when you could relax in a van.
+        </h1>
+        <p className="px-9 text-xl">
           Our mission is to enliven your road trip with the perfect travel van
           rental. Our vans are recertified before each trip to ensure your
           travel plans can go off without a hitch. (Hitch costs extra 😉)
         </p>
-        <p>
+        <p className="p-9 text-xl">
           Our team is full of vanlife enthusiasts who know firsthand the magic
           of touring the world on 4 wheels.
         </p>
       </div>
-      <div className="about-page-cta">
-        <h2>
+      <div className="bg-orange-300 p-12 m-10 rounded-lg">
+        <h2 className="text-3xl font-bold mb-12">
           Your destination is waiting.
           <br />
           Your van is ready.
         </h2>
-        <Link className="link-button" to="/vans">
+        <Link className="bg-black text-white p-4 rounded-lg" to="/vans">
           Explore our vans
         </Link>
       </div>
