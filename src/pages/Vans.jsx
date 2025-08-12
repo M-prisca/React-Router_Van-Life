@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Vans = () => {
   const [vans, setVans] = React.useState([]);
@@ -11,31 +12,33 @@ const Vans = () => {
 
   const vanElements = vans.map((van) => (
     <div key={van.id} className="bg-white rounded-lg overflow-hidden shadow-sm">
-      <img
-        src={van.imageUrl}
-        alt={van.name}
-        className="w-full h-80  object-cover"
-      />
-      <div className="p-4">
-        <div className="flex justify-between items-center">
-          <h3 className="text-lg font-semibold">{van.name}</h3>
-          <p className="text-lg font-bold">
-            ${van.price}
-            <span className="text-sm font-normal">/day</span>
-          </p>
+      <Link to={`/vans/${van.id}`}>
+        <img
+          src={van.imageUrl}
+          alt={van.name}
+          className="w-full h-80  object-cover"
+        />
+        <div className="p-4">
+          <div className="flex justify-between items-center">
+            <h3 className="text-lg font-semibold">{van.name}</h3>
+            <p className="text-lg font-bold">
+              ${van.price}
+              <span className="text-sm font-normal">/day</span>
+            </p>
+          </div>
+          <span
+            className={`inline-block mt-3 px-4 py-2 text-sm font-medium text-white rounded ${
+              van.type === "simple"
+                ? "bg-orange-500"
+                : van.type === "luxury"
+                ? "bg-black"
+                : "bg-green-600"
+            }`}
+          >
+            {van.type}
+          </span>
         </div>
-        <span
-          className={`inline-block mt-3 px-4 py-2 text-sm font-medium text-white rounded ${
-            van.type === "simple"
-              ? "bg-orange-500"
-              : van.type === "luxury"
-              ? "bg-black"
-              : "bg-green-600"
-          }`}
-        >
-          {van.type}
-        </span>
-      </div>
+      </Link>
     </div>
   ));
 
