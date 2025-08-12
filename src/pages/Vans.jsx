@@ -12,10 +12,13 @@ const Vans = () => {
 
   const vanElements = vans.map((van) => (
     <div key={van.id} className="bg-white rounded-lg overflow-hidden shadow-sm">
-      <Link to={`/vans/${van.id}`}>
+      <Link
+        to={`/vans/${van.id}`}
+        aria-label={`View detals for ${van.name}, price at ${van.price} per day`}
+      >
         <img
           src={van.imageUrl}
-          alt={van.name}
+          alt={`image of ${van.name}`}
           className="w-full h-80  object-cover"
         />
         <div className="p-4">
