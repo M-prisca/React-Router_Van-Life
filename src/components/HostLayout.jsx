@@ -7,7 +7,7 @@ const HostLayout = () => {
 
   return (
     <>
-      <nav className="bg-white flex gap-4 px-4 py-2">
+      <nav className="bg-white flex gap-4 text-lg px-4 py-2">
         <NavLink
           to="/host"
           end={true}

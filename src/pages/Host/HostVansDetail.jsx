@@ -18,13 +18,21 @@ export default function HostVansDetail() {
     }
 
     return (
-        <div className="flex  justify-center ">
-            <div>
-                <img src={currentVan.imageUrl} className="w-60" />
-                <h2>{currentVan.name}</h2>
-                <p>{currentVan.price}</p>
-                <p>{currentVan.type}</p>
+       <section>
+            <div className="bg-gray-100  mx-70">
+                <div className="flex justify-items-end gap-4">
+                    <img className="h-40 w-80 object-cover ml" src={currentVan.imageUrl} />
+                    <div className="host-van-detail-info-text">
+                        <i
+                            className={`van-type van-type-${currentVan.type}`}
+                        >
+                            {currentVan.type}
+                        </i>
+                        <h3>{currentVan.name}</h3>
+                        <h4>${currentVan.price}/day</h4>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     )
 }
