@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Vans = () => {
   const [vans, setVans] = React.useState([]);
@@ -12,7 +12,7 @@ const Vans = () => {
 
   const vanElements = vans.map((van) => (
     <div key={van.id} className="bg-white rounded-lg overflow-hidden shadow-sm">
-      <Link
+      <NavLink
         to={`/vans/${van.id}`}
         aria-label={`View detals for ${van.name}, price at ${van.price} per day`}
       >
@@ -41,7 +41,7 @@ const Vans = () => {
             {van.type}
           </span>
         </div>
-      </Link>
+      </NavLink>
     </div>
   ));
 

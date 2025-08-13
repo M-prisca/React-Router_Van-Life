@@ -18,12 +18,12 @@ function Home() {
           Add adventure to your life by joining the #vanlife movement. Rent the
           perfect van to make your perfect road trip.
         </p>
-        <navLink
+        <NavLink
           to="vans"
           className="mt-6 inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg"
         >
           Find your van
-        </navLink>
+        </NavLink>
       </div>
     </section>
   );
