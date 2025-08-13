@@ -12,6 +12,7 @@ import Layout from "./components/Layout";
 
 import "./index.css";
 import "./server.js";
+import HostLayout from "./components/HostLayout.jsx";
 
 function App() {
   return (
@@ -23,16 +24,8 @@ function App() {
           <Route path="/vans" element={<Vans />} />
           <Route path="/vans/:id" element={<VanDetail />} />
 
-          {/* 
-          Challenge: 
-          1. Turn the "/host" path into a parent route and nest
-          "/host/income" and "/host/reviews" as children routes.
-          Then try entering "/host/income" in the URL and see what
-          happens.
-          
-          2. See if you can figure out why it did what it did.
-          */}
-          <Route path="/host" element={<Dashboard />}>
+          <Route path="/host" element={<HostLayout />}>
+            <Route index element={<Dashboard />} />
             <Route path="/host/income" element={<Income />} />
             <Route path="/host/reviews" element={<Reviews />} />
           </Route>
