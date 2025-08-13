@@ -1,6 +1,6 @@
 import React from "react";
 import bgImg from "../assets/about-hero.png";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function About() {
   return (
@@ -26,9 +26,9 @@ function About() {
           <br />
           Your van is ready.
         </h2>
-        <Link className="bg-black text-white p-4 rounded-lg" to="/vans">
+        <NavLink className="bg-black text-white p-4 rounded-lg" to="/vans">
           Explore our vans
-        </Link>
+        </NavLink>
       </div>
     </div>
   );
