@@ -5,7 +5,7 @@ import hmImg from "../assets/home-hero.png";
 function Home() {
   return (
     <section
-      className="relative h-[calc(90vh-60px)] bg-cover bg-center flex items-center justify-center text-center"
+      className="relative h-[calc(93vh-60px)] bg-cover bg-center flex items-center justify-center text-center"
       style={{ backgroundImage: `url(${hmImg})` }}
     >
       <div className="absolute inset-0 bg-black/40" />
