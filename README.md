@@ -1,12 +1,58 @@
-# React + Vite
+# VanLife Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React web app for VanLife rentals with a public site and host dashboard. Built with **React Router v6** and **Tailwind CSS**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Public Pages:** Home, About, Vans, Van Detail
+- **Host Dashboard:** Dashboard, Income, Reviews (nested routes with `Outlet`)
+- **Navigation:** NavLinks with hover effects (red text + underline)
+- **Responsive Design:** Fully styled with Tailwind CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Tech Stack
+
+- React + React Router v6
+- Tailwind CSS
+- JavaScript (ES6+)
+
+---
+
+## Folder Structure
+
+```
+vanlife-dashboard/
+├── public/
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── components/
+│   │   ├── Nav.js
+│   │   └── ...
+│   ├── pages/
+│   │   ├── Home.js
+│   │   ├── About.js
+│   │   ├── Vans.js
+│   │   ├── VanDetail.js
+│   │   ├── Dashboard.js
+```
+
+## Installation
+
+```bash
+git clone https://github.com/M-prisca/React-Router_Van-Life
+cd React-Router
+npm install
+npm run dev
+```
+
+## Contributing
+
+- Fork the repository.
+- Create a feature branch (git checkout -b feature/YourFeature).
+- Commit your changes (git commit -m 'Add feature').
+- Push to the branch (git push origin feature/YourFeature).
+- Open a Pull Request.
