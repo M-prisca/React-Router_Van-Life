@@ -5,9 +5,9 @@ const HostLayout = () => {
   return (
     <>
       <nav className="bg-white flex gap-4 px-4 ">
-        <navLink className="hover:underline" to="/host">
+        <NavLink className="hover:underline" to="/host">
           Dashboard
-        </navLink>
+        </NavLink>
         <NavLink className="hover:underline" to="/host/income">
           Income
         </NavLink>
