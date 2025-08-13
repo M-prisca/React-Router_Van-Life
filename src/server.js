@@ -83,5 +83,10 @@ createServer({
     this.get("/host/vans", (schema) => {
     return schema.vans.all();
   });
+  this.get("/host/vans/:id", (schema, request) => {
+  const id = request.params.id;
+  return schema.vans.find(id);
+});
+
   },
 });

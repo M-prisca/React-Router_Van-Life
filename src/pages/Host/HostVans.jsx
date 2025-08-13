@@ -17,7 +17,7 @@ export default function HostVans() {
             className="host-van-link-wrapper"
         >
             <div className="flex gap-4 p-4 m-4 rounded-2xl shadow-lg " key={van.id}>
-                <img src={van.imageUrl} alt={`Photo of ${van.name}`} className="w-20"/>
+                <img src={van.imageUrl} alt={`Photo of ${van.name}`} className="w-40 rounded-2xl"/>
                 <div className="host-van-info">
                     <h3>{van.name}</h3>
                     <p>${van.price}/day</p>
