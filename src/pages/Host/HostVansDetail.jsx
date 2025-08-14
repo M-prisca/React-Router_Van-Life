@@ -18,7 +18,11 @@ export default function HostVansDetail() {
 
   return (
     <section>
-      <Link to=".." relative="path" className="">
+      <Link
+        to=".."
+        relative="path"
+        className="p-12 mb-6 text-lg hover:font-bold "
+      >
         &larr; <span>Back to all vans</span>
       </Link>
 
@@ -28,9 +32,13 @@ export default function HostVansDetail() {
             className="h-70 rounded-2xl w-70 object-cover m-8"
             src={currentVan.imageUrl}
           />
-          <div className="">
-            <i className={`bg-${currentVan.type}`}>{currentVan.type}</i>
-            <h3>{currentVan.name}</h3>
+          <div className="mt-14">
+            <i
+              className={`bg-orange-300 p-3 rounded-2xl w-6 ${currentVan.type}`}
+            >
+              {currentVan.type}
+            </i>
+            <h3 className="text-2xl font-bold py-4 pb-2">{currentVan.name}</h3>
             <h4>${currentVan.price}/day</h4>
           </div>
         </div>
