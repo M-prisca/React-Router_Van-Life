@@ -1,12 +1,15 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, NavLink, Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 export default function HostVansDetail() {
   const { id } = useParams();
-  const [currentVan, setCurrentVan] = React.useState(null);
+  const [currentVan, setCurrentVan] = useState(null);
 
-  React.useEffect(() => {
+  const getLinkClass = () =>
+    "text-black hover:text-red-500 hover:font-bold hover:underline transition-colors";
+
+  useEffect(() => {
     fetch(`/api/host/vans/${id}`)
       .then((res) => res.json())
       .then((data) => setCurrentVan(data.vans));
@@ -42,6 +45,28 @@ export default function HostVansDetail() {
             <h4>${currentVan.price}/day</h4>
           </div>
         </div>
+        <nav className="host-van-detail-nav">
+          <NavLink
+            to="."
+            end
+            className={({ isActive }) => (isActive ? getLinkClass() : null)}
+          >
+            Details
+          </NavLink>
+          <NavLink
+            to="pricing"
+            className={({ isActive }) => (isActive ? getLinkClass() : null)}
+          >
+            Pricing
+          </NavLink>
+          <NavLink
+            to="photos"
+            className={({ isActive }) => (isActive ? getLinkClass() : null)}
+          >
+            Photos
+          </NavLink>
+        </nav>
+        <Outlet context={{ currentVan }} />
       </div>
     </section>
   );

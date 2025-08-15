@@ -11,6 +11,9 @@ import HostVansDetail from "./pages/Host/HostVansDetail.jsx";
 import HostVans from "./pages/Host/HostVans.jsx";
 import VanDetail from "./pages/VanDetail.jsx";
 import Layout from "./components/Layout";
+import HostVanInfo from "./pages/Host/HostVanInfo.jsx";
+import HostVanPhoto from "./pages/Host/HostVanPhoto.jsx";
+import HostVanPricing from "./pages/Host/HostVanPricing.jsx";
 
 import "./index.css";
 import "./server.js";
@@ -30,8 +33,12 @@ function App() {
             <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
             <Route path="reviews" element={<Reviews />} />
-            <Route path="vans" element ={<HostVans />} />
-            <Route path="vans/:id" element ={<HostVansDetail />} />
+            <Route path="vans" element={<HostVans />} />
+            <Route path="vans/:id" element={<HostVansDetail />}>
+              <Route index element={<HostVanInfo />} />
+              <Route path="pricing" element={<HostVanPricing />} />
+              <Route path="photos" element={<HostVanPhoto />} />
+            </Route>
           </Route>
         </Route>
       </Routes>
