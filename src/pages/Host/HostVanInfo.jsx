@@ -5,18 +5,19 @@ const HostVanInfo = () => {
   const { currentVan } = useOutletContext();
 
   return (
-    <section className="host-van-detail-info">
-      <h4>
-        Name: <span>{currentVan.name}</span>
+    <section className="p-8 ">
+      <h4 className="font-bold pb-2">
+        Name: <span className="font-normal">{currentVan.name}</span>
       </h4>
-      <h4>
-        Category: <span>{currentVan.type}</span>
+      <h4 className="font-bold pb-2">
+        Category: <span className="font-normal">{currentVan.type}</span>
       </h4>
-      <h4>
-        Description: <span>{currentVan.description}</span>
+      <h4 className="font-bold">
+        Description:{" "}
+        <span className="font-normal">{currentVan.description}</span>
       </h4>
-      <h4>
-        Visibility: <span>Public</span>
+      <h4 className="font-bold pt-2">
+        Visibility: <span className="font-normal">Public</span>
       </h4>
     </section>
   );
