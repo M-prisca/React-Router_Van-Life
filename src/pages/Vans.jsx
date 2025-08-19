@@ -52,6 +52,16 @@ const Vans = () => {
       </NavLink>
     </div>
   ));
+  function handleFilterChange(key, value) {
+    setSearchParams((prevParams) => {
+      if (value === null) {
+        prevParams.delete(key);
+      } else {
+        prevParams.set(key, value);
+      }
+      return prevParams;
+    });
+  }
 
   return (
     <div className="px-4 py-8 max-w-5xl mx-auto">
@@ -59,10 +69,10 @@ const Vans = () => {
 
       <div className="flex gap-3 mb-8">
         <button
-          onClick={() => setSearchParams({ type: "simple" })}
+          onClick={() => handleFilterChange("type", "simple")}
           className={`px-4 py-2 rounded-md font-medium ${
             typeFilter === "simple"
-              ? "bg-orange-200 text-orange-600"
+              ? "bg-orange-200 text-orange-600" // active styles
               : "bg-orange-100 text-black hover:text-orange-600 hover:bg-orange-200"
           }`}
         >
@@ -70,7 +80,7 @@ const Vans = () => {
         </button>
 
         <button
-          onClick={() => setSearchParams({ type: "rugged" })}
+          onClick={() => handleFilterChange("type", "rugged")}
           className={`px-4 py-2 rounded-md font-medium ${
             typeFilter === "rugged"
               ? "bg-green-200 text-green-600"
@@ -81,7 +91,7 @@ const Vans = () => {
         </button>
 
         <button
-          onClick={() => setSearchParams({ type: "luxury" })}
+          onClick={() => handleFilterChange("type", "luxury")}
           className={`px-4 py-2 rounded-md font-medium ${
             typeFilter === "luxury"
               ? "bg-black text-white"
@@ -93,7 +103,7 @@ const Vans = () => {
 
         {typeFilter && (
           <button
-            onClick={() => setSearchParams({})}
+            onClick={() => handleFilterChange("type", null)}
             className="px-4 py-2 rounded-md bg-white text-black font-medium underline hover:text-lg"
           >
             Clear filters
