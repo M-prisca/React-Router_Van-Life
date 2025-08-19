@@ -20,8 +20,8 @@ const Vans = () => {
 
   const vanElements = displayedVans.map((van) => (
     <div key={van.id} className="bg-white rounded-lg overflow-hidden shadow-sm">
-      <NavLink
-        to={`/vans/${van.id}`}
+      <Link
+        to={van.id}
         aria-label={`View detals for ${van.name}, price at ${van.price} per day`}
       >
         <img
@@ -49,7 +49,7 @@ const Vans = () => {
             {van.type}
           </span>
         </div>
-      </NavLink>
+      </Link>
     </div>
   ));
   function handleFilterChange(key, value) {
