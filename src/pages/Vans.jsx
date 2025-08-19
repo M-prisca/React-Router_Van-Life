@@ -14,7 +14,11 @@ const Vans = () => {
       .then((data) => setVans(data.vans));
   }, []);
 
-  const vanElements = vans.map((van) => (
+  const displayedVans = typeFilter
+    ? vans.filter((van) => van.type === typeFilter)
+    : vans;
+
+  const vanElements = displayedVans.map((van) => (
     <div key={van.id} className="bg-white rounded-lg overflow-hidden shadow-sm">
       <NavLink
         to={`/vans/${van.id}`}
