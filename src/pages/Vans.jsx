@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, useSearchParams } from "react-router-dom";
+import { Link, NavLink, useSearchParams } from "react-router-dom";
 
 const Vans = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -58,18 +58,30 @@ const Vans = () => {
       <h1 className="text-2xl font-bold mb-6">Explore our van options</h1>
 
       <div className="flex gap-3 mb-8">
-        <button className="px-4 py-2 rounded-md bg-orange-100 text-orange-600 font-medium">
+        <Link
+          to="?type=simple"
+          className="px-4 py-2 rounded-md bg-orange-100 text-orange-600 font-medium"
+        >
           Simple
-        </button>
-        <button className="px-4 py-2 rounded-md bg-green-100 text-green-600 font-medium">
+        </Link>
+        <Link
+          to="?type=rugged"
+          className="px-4 py-2 rounded-md bg-green-100 text-green-600 font-medium"
+        >
           Rugged
-        </button>
-        <button className="px-4 py-2 rounded-md bg-black text-white font-medium">
+        </Link>
+        <Link
+          to="?type=luxury"
+          className="px-4 py-2 rounded-md bg-black text-white font-medium"
+        >
           Luxury
-        </button>
-        <button className="px-4 py-2 rounded-md bg-gray-200 text-gray-700 font-medium">
+        </Link>
+        <Link
+          to="."
+          className="px-4 py-2 rounded-md bg-gray-200 text-gray-700 font-medium"
+        >
           Clear filters
-        </button>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">{vanElements}</div>
