@@ -58,30 +58,30 @@ const Vans = () => {
       <h1 className="text-2xl font-bold mb-6">Explore our van options</h1>
 
       <div className="flex gap-3 mb-8">
-        <Link
-          to="?type=simple"
+        <button
+          onClick={() => setSearchParams({ type: "simple" })}
           className="px-4 py-2 rounded-md bg-orange-100 text-orange-600 font-medium"
         >
           Simple
-        </Link>
-        <Link
-          to="?type=rugged"
+        </button>
+        <button
+          onClick={() => setSearchParams({ type: "rugged" })}
           className="px-4 py-2 rounded-md bg-green-100 text-green-600 font-medium"
         >
           Rugged
-        </Link>
-        <Link
-          to="?type=luxury"
+        </button>
+        <button
+          onClick={() => setSearchParams({ type: "luxury" })}
           className="px-4 py-2 rounded-md bg-black text-white font-medium"
         >
           Luxury
-        </Link>
-        <Link
-          to="."
+        </button>
+        <button
+          onClick={() => setSearchParams({})}
           className="px-4 py-2 rounded-md bg-gray-200 text-gray-700 font-medium"
         >
           Clear filters
-        </Link>
+        </button>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">{vanElements}</div>
