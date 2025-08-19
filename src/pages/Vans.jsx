@@ -60,25 +60,25 @@ const Vans = () => {
       <div className="flex gap-3 mb-8">
         <button
           onClick={() => setSearchParams({ type: "simple" })}
-          className="px-4 py-2 rounded-md bg-orange-100 text-orange-600 font-medium"
+          className="px-4 py-2 text-black bg-orange-100 rounded-md hover:text-orange-600 hover:bg-orange-200 font-medium"
         >
           Simple
         </button>
         <button
           onClick={() => setSearchParams({ type: "rugged" })}
-          className="px-4 py-2 rounded-md bg-green-100 text-green-600 font-medium"
+          className="px-4 py-2 text-black bg-orange-100 rounded-md hover:text-green-600 hover:bg-green-200 font-medium"
         >
           Rugged
         </button>
         <button
           onClick={() => setSearchParams({ type: "luxury" })}
-          className="px-4 py-2 rounded-md bg-black text-white font-medium"
+          className="px-4 py-2 text-black bg-orange-100 rounded-md hover:text-white hover:bg-black font-medium "
         >
           Luxury
         </button>
         <button
           onClick={() => setSearchParams({})}
-          className="px-4 py-2 rounded-md bg-gray-200 text-gray-700 font-medium"
+          className="px-4 py-2 rounded-md bg-white text-black font-medium underline hover:text-lg"
         >
           Clear filters
         </button>
