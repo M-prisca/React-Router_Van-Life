@@ -60,30 +60,45 @@ const Vans = () => {
       <div className="flex gap-3 mb-8">
         <button
           onClick={() => setSearchParams({ type: "simple" })}
-          className="px-4 py-2 text-black bg-orange-100 rounded-md hover:text-orange-600 hover:bg-orange-200 font-medium"
+          className={`px-4 py-2 rounded-md font-medium ${
+            typeFilter === "simple"
+              ? "bg-orange-200 text-orange-600"
+              : "bg-orange-100 text-black hover:text-orange-600 hover:bg-orange-200"
+          }`}
         >
           Simple
         </button>
+
         <button
           onClick={() => setSearchParams({ type: "rugged" })}
-          className="px-4 py-2 text-black bg-orange-100 rounded-md hover:text-green-600 hover:bg-green-200 font-medium"
+          className={`px-4 py-2 rounded-md font-medium ${
+            typeFilter === "rugged"
+              ? "bg-green-200 text-green-600"
+              : "bg-green-100 text-black hover:text-green-600 hover:bg-green-200"
+          }`}
         >
           Rugged
         </button>
+
         <button
           onClick={() => setSearchParams({ type: "luxury" })}
-          className="px-4 py-2 text-black bg-orange-100 rounded-md hover:text-white hover:bg-black font-medium "
+          className={`px-4 py-2 rounded-md font-medium ${
+            typeFilter === "luxury"
+              ? "bg-black text-white"
+              : "bg-gray-100 text-black hover:text-white hover:bg-black"
+          }`}
         >
           Luxury
         </button>
-        {typeFilter ? (
+
+        {typeFilter && (
           <button
             onClick={() => setSearchParams({})}
             className="px-4 py-2 rounded-md bg-white text-black font-medium underline hover:text-lg"
           >
             Clear filters
           </button>
-        ) : null}
+        )}
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">{vanElements}</div>
