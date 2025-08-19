@@ -76,12 +76,14 @@ const Vans = () => {
         >
           Luxury
         </button>
-        <button
-          onClick={() => setSearchParams({})}
-          className="px-4 py-2 rounded-md bg-white text-black font-medium underline hover:text-lg"
-        >
-          Clear filters
-        </button>
+        {typeFilter ? (
+          <button
+            onClick={() => setSearchParams({})}
+            className="px-4 py-2 rounded-md bg-white text-black font-medium underline hover:text-lg"
+          >
+            Clear filters
+          </button>
+        ) : null}
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">{vanElements}</div>
