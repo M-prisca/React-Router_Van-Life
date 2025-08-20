@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const VanDetail = () => {
   const { id } = useParams();
@@ -15,8 +15,11 @@ const VanDetail = () => {
 
   return (
     <div className="px-12 py-8 max-w-3xl mx-auto">
+      <Link to=".." relative="path" className="text-lg  hover:font-bold ">
+        &larr; <span>Back to all vans</span>
+      </Link>
       {van ? (
-        <div className="bg-white rounded-lg overflow-hidden shadow-md">
+        <div className="bg-white rounded-lg overflow-hidden mt-6 shadow-md">
           <img
             src={van.imageUrl}
             alt={van.name}
