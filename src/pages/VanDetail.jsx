@@ -16,6 +16,7 @@ const VanDetail = () => {
   }, [id]);
 
   const search = location.state?.search || "";
+  const type = location.state?.type || "all";
 
   return (
     <div className="px-12 py-8 max-w-3xl mx-auto">
@@ -24,7 +25,7 @@ const VanDetail = () => {
         relative="path"
         className="text-lg  hover:font-bold "
       >
-        &larr; <span>Back to all vans</span>
+        &larr; <span>Back to {type} vans</span>
       </Link>
       {van ? (
         <div className="bg-white rounded-lg overflow-hidden mt-6 shadow-md">

@@ -23,7 +23,7 @@ const Vans = () => {
     <div key={van.id} className="bg-white rounded-lg overflow-hidden shadow-sm">
       <Link
         to={van.id}
-        state={{ search: `?${searchParams.toString()}` }}
+        state={{ search: `?${searchParams.toString()}`, type: typeFilter }}
         aria-label={`View details for ${van.name}, price at ${van.price} per day`}
       >
         <img
