@@ -6,6 +6,7 @@ const Vans = () => {
   const [vans, setVans] = React.useState([]);
 
   const typeFilter = searchParams.get("type");
+  console.log(searchParams.toString());
 
   console.log(typeFilter);
   React.useEffect(() => {
@@ -22,7 +23,8 @@ const Vans = () => {
     <div key={van.id} className="bg-white rounded-lg overflow-hidden shadow-sm">
       <Link
         to={van.id}
-        aria-label={`View detals for ${van.name}, price at ${van.price} per day`}
+        state={{ search: `?${searchParams.toString()}` }}
+        aria-label={`View details for ${van.name}, price at ${van.price} per day`}
       >
         <img
           src={van.imageUrl}
@@ -72,7 +74,7 @@ const Vans = () => {
           onClick={() => handleFilterChange("type", "simple")}
           className={`px-4 py-2 rounded-md font-medium ${
             typeFilter === "simple"
-              ? "bg-orange-200 text-orange-600" // active styles
+              ? "bg-orange-200 text-orange-600"
               : "bg-orange-100 text-black hover:text-orange-600 hover:bg-orange-200"
           }`}
         >

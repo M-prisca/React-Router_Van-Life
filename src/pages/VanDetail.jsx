@@ -1,8 +1,10 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 
 const VanDetail = () => {
   const { id } = useParams();
+  const location = useLocation();
+  console.log(location);
   const [van, setVan] = React.useState(null);
 
   React.useEffect(() => {
@@ -13,9 +15,15 @@ const VanDetail = () => {
       });
   }, [id]);
 
+  const search = location.state?.search || "";
+
   return (
     <div className="px-12 py-8 max-w-3xl mx-auto">
-      <Link to=".." relative="path" className="text-lg  hover:font-bold ">
+      <Link
+        to={`..${search}`}
+        relative="path"
+        className="text-lg  hover:font-bold "
+      >
         &larr; <span>Back to all vans</span>
       </Link>
       {van ? (
