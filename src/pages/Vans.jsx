@@ -6,18 +6,25 @@ const Vans = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [vans, setVans] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState(null);
 
   const typeFilter = searchParams.get("type");
 
   console.log(typeFilter);
+
   React.useEffect(() => {
     async function LoadVans() {
       setLoading(true);
-      const data = await getVans();
-      setVans(data);
-      setLoading(false);
+      try {
+        const data = await getVans();
+        setVans(data);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
     }
-    LoadVans();
+    // LoadVans();
   }, []);
 
   const displayedVans = typeFilter
@@ -72,6 +79,13 @@ const Vans = () => {
 
   if (loading) {
     return <p className="text-2xl text-gray-500">Loading...</p>;
+  }
+  if (error) {
+    return (
+      <p className="text-2xl text-red-500">
+        There was an error loading the vans
+      </p>
+    );
   }
 
   return (
