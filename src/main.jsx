@@ -10,6 +10,7 @@ import Reviews from "./pages/Host/Reviews.jsx";
 import HostVansDetail from "./pages/Host/HostVansDetail.jsx";
 import HostVans from "./pages/Host/HostVans.jsx";
 import VanDetail from "./pages/VanDetail.jsx";
+import NotFound from "./pages/NotFound.jsx";
 import Layout from "./components/Layout";
 import HostVanInfo from "./pages/Host/HostVanInfo.jsx";
 import HostVanPhoto from "./pages/Host/HostVanPhoto.jsx";
@@ -24,12 +25,6 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route
-            path="*"
-            element={
-              <h1 className="text-2xl font-bold text-center">404 Not Found</h1>
-            }
-          />
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="vans" element={<Vans />} />
@@ -46,6 +41,7 @@ function App() {
               <Route path="photos" element={<HostVanPhoto />} />
             </Route>
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
