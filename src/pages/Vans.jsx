@@ -24,7 +24,7 @@ const Vans = () => {
         setLoading(false);
       }
     }
-    // LoadVans();
+    LoadVans();
   }, []);
 
   const displayedVans = typeFilter
