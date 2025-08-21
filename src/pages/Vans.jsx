@@ -78,11 +78,15 @@ const Vans = () => {
   }
 
   if (loading) {
-    return <p className="text-2xl text-gray-500">Loading...</p>;
+    return (
+      <p aria-live="polite" className="text-2xl text-gray-500">
+        Loading...
+      </p>
+    );
   }
   if (error) {
     return (
-      <p className="text-2xl text-red-500">
+      <p aria-live="assertive" className="text-2xl text-red-500">
         There was an error loading the vans
       </p>
     );
