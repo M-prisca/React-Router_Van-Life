@@ -5,14 +5,17 @@ import { getVans } from "../api";
 const Vans = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [vans, setVans] = React.useState([]);
+  const [loading, setLoading] = React.useState(false);
 
   const typeFilter = searchParams.get("type");
 
   console.log(typeFilter);
   React.useEffect(() => {
     async function LoadVans() {
+      setLoading(true);
       const data = await getVans();
       setVans(data);
+      setLoading(false);
     }
     LoadVans();
   }, []);
@@ -65,6 +68,10 @@ const Vans = () => {
       }
       return prevParams;
     });
+  }
+
+  if (loading) {
+    return <p className="text-2xl text-gray-500">Loading...</p>;
   }
 
   return (
