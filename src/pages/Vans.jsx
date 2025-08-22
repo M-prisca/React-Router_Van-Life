@@ -8,30 +8,10 @@ export function loader() {
 
 const Vans = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [vans, setVans] = React.useState([]);
-  const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
-  const data = useLoaderData();
-  console.log(data);
+  const vans = useLoaderData();
 
   const typeFilter = searchParams.get("type");
-
-  console.log(typeFilter);
-
-  React.useEffect(() => {
-    async function LoadVans() {
-      setLoading(true);
-      try {
-        const data = await getVans();
-        setVans(data);
-      } catch (err) {
-        setError(err);
-      } finally {
-        setLoading(false);
-      }
-    }
-    LoadVans();
-  }, []);
 
   const displayedVans = typeFilter
     ? vans.filter((van) => van.type === typeFilter)
@@ -82,20 +62,8 @@ const Vans = () => {
       return prevParams;
     });
   }
-
-  if (loading) {
-    return (
-      <p aria-live="polite" className="text-2xl text-gray-500">
-        Loading...
-      </p>
-    );
-  }
   if (error) {
-    return (
-      <p aria-live="assertive" className="text-2xl text-red-500">
-        There was an error loading the vans
-      </p>
-    );
+    return <h1>There was an error: {error.message}</h1>;
   }
 
   return (
