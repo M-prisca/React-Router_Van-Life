@@ -22,6 +22,7 @@ import Layout from "./components/Layout";
 import HostVanInfo from "./pages/Host/HostVanInfo.jsx";
 import HostVanPhoto from "./pages/Host/HostVanPhoto.jsx";
 import HostVanPricing from "./pages/Host/HostVanPricing.jsx";
+import Error from "./components/Error.jsx";
 
 import "./index.css";
 import "./server.js";
@@ -32,7 +33,12 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
-      <Route path="vans" element={<Vans />} loader={vansLoader} />
+      <Route
+        path="vans"
+        element={<Vans />}
+        errorElement={<Error />}
+        loader={vansLoader}
+      />
       <Route path="vans/:id" element={<VanDetail />} />
 
       <Route path="host" element={<HostLayout />}>
